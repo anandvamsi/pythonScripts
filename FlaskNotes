@@ -1,0 +1,55 @@
+>>Python API
+
+we are using flask framework to create API server
+Step 1: Install python apt-get install python3-flas
+
+Step 2: Create a python flask file 
+cation filename should have a different name not flask.py
+create 
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+        return 'Hello World!'
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
+
+Note app.run() will open the port only localhost that is 127.0.0.1
+app.run(0.0.0.0) will open the port to 0.0.0.0
+
+
+Execution 
+ python3 main.py
+ * Serving Flask app "main" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+192.168.56.1 - - [14/Jul/2020 16:59:47] "GET / HTTP/1.1" 200 -
+
+Note:
+By default the port is 5000, if we have to change the port to 8000
+app.run(host='0.0.0.0',port=8000)
+
+
+passing Arguments in API URL
+--------------------------------
+Syntax
+##http://192.168.56.1:8000/<route>?<key1>=<value1>&<key2>=<value2>
+example:-
+http://192.168.56.1:8000/my-route?user=anandvamsi&ipaddress=90.67.56
+
+
+>>Flask Code for the same
+@app.route('/my-route')
+def profile():
+         user = request.args.get('user',default = 'unk')
+         ipaddress = request.args.get('ipaddress', default = '0.0.0.0')
+         print ("The values are "  + user + " " + ipaddress)
+         return user
+
+
+
