@@ -1,0 +1,40 @@
+# Code to notify if the difference b/w current date and give date is 2 hours in UTC
+
+#!/usr/bin/python
+
+from datetime import datetime
+
+##--Provided datestamp
+mw_timestamp="2020-11-20T17:36:58.734Z"
+res=mw_timestamp.strip('Z')
+
+#Extracing  date and time
+mw_date=res.split('T', 1)[0]
+mw_time=res.split('T', 1)[1]
+##Extracing mw time minute and hour as string and converint datetime format
+mw_hr,mw_min,mw_sec = mw_time.split(':')
+mw_time = mw_hr +":"+ mw_min
+mw_time_object = datetime.strptime(mw_time,'%H:%M').time()
+mw_date_object = datetime.strptime(mw_date,'%Y-%m-%d').date()
+
+
+
+#Extracing UTC time
+utcdatestamp = str(datetime.utcnow())
+utcdate,utctimestamp = utcdatestamp.split(' ')
+utchour,utcminute,utcsecond = utctimestamp.split(':')
+utctime = utchour +":"+ utcminute
+utc_time_object = datetime.strptime(utctime, '%H:%M').time()
+utc_date_object = datetime.strptime(utcdate,'%Y-%m-%d').date()
+
+print utc_time_object
+
+#Calculating the difference
+daysdiff = mw_date_object - utc_date_object
+if daysdiff.days != 0:
+    print "Difference b/w present day and maintaince window date is greater than 24 hours"
+else:
+    print "Maintaince is on same day"
+    delta_time = int(mw_hr) - int(utchour)
+    if delta_time == 2:
+        print "Trigger SES"
