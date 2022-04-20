@@ -1,0 +1,7 @@
+num1 = input("Enter number 1 ")
+num2 = input("Enter number 2 ")
+message = "The numbers are {} and {}".format(num1,num2)
+print (message)
+result = int(num1) + int(num2)
+message1 = "The result is {}".format(result)
+print (message1)
