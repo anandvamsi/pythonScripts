@@ -1,0 +1,6 @@
+x = 30
+y = 40
+if x > y:
+    print ('{} is greater than {}'.format(x,y))
+else:
+    print ('{} is greater than {}'.format(y,x))
