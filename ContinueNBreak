@@ -1,0 +1,17 @@
+#continue skips to the loop if the condition is met
+data = [1,2,3,4,5,0]
+for x in data:
+    if x == 0:
+        continue
+    print (x)
+
+
+
+#Lets use the break
+data = [1,2,3,0,4,5,0]
+for x in data:
+    if x == 0:
+        break
+    print (x)
+
+print ("Im in break statement")
