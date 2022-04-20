@@ -4,3 +4,19 @@ if x > y:
     print ('{} is greater than {}'.format(x,y))
 else:
     print ('{} is greater than {}'.format(y,x))
+
+
+
+if else if conditions
+------------------------------
+marks = 20
+
+if marks >= 80:
+    print ("First class")
+elif marks >=50:
+    print ("second class")
+elif marks >=35:
+    print ("Third class")
+else:
+    print ("failed")
+~                     
