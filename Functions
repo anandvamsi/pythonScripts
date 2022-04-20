@@ -1,0 +1,6 @@
+def add(x,y):
+    result = int(x) + int(y)
+    print ("sum of {} and {} is {}".format(x,y,result))
+
+add(2,10)
+add(2,20)
