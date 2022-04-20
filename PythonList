@@ -1,0 +1,11 @@
+
+data = [1,1,'A','B','C']
+for x in data:
+    print (x)
+
+
+##Appending data to list
+data.append(34)
+print ("After Appending the data")
+for x in data:
+    print (x)
