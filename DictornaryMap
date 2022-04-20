@@ -1,0 +1,20 @@
+data = {'Apple': 30, 'Oranges': 40, 'grapes': 60}
+for x in data.keys():
+    print (x)
+
+
+#printing the values
+for y in data.values():
+    print (y)
+
+
+#Adding element to the dictornary
+data['mangoes'] = 245
+for x in data.keys():
+    print (x)
+
+
+
+#Accessing one element  of data meta/nested dicitorniary
+data1 = {'Name': 'Anand', 'skills': ['aws','gcp','azure']}
+print (data1['skills'][0])
