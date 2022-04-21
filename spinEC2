@@ -1,0 +1,14 @@
+import boto3
+ec2_client = boto3.client('ec2',region_name='us-west-2')
+response = ec2_client.run_instances(ImageId='ami-0c2d06d50ce30b442',
+                                 InstanceType='t2.micro',
+                                 KeyName='CIStesting',
+                                 MaxCount=1,
+                                 MinCount=1,
+                                 SubnetId='subnet-047c8caae88d24be6',
+                                 SecurityGroupIds=['sg-002a48843327719ef'])
+
+for instance in response['Instances']:
+    print ("The instance is {}". format(instance['InstanceId']))
+
+print (response['Instances']['0'])
