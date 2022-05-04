@@ -1,0 +1,15 @@
+import boto3
+import json
+ec2_client = boto3.client('ec2',region_name='us-west-2')
+
+resp = ec2_client.describe_instances()
+
+#print (json.dumps(resp, indent=2, default=str))
+
+for reservation  in resp['Reservations']:
+    for instance in reservation['Instances']:
+        print ("Instnace is {}".format(instance['InstanceId']))
+        print ("PrivateDnsName is {}".format(instance['PrivateDnsName']))
+        print ("zone is {}".format(instance['Placement']['AvailabilityZone']))
+        print ("Block device manpping {}".format(instance['IamInstanceProfile']['Arn']))
+        #print (json.dumps(instance, indent=2, default=str)
