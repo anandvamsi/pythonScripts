@@ -1,0 +1,10 @@
+#Printing the dictornary in a better way
+
+import boto3
+import json
+import pprint
+ec2_client = boto3.client('ec2',region_name='us-west-2')
+
+resp = ec2_client.describe_instances()
+pp = pprint.PrettyPrinter(depth=4)
+pp.pprint(resp)
