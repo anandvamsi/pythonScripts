@@ -11,6 +11,12 @@ numbers = [1,2,3,4,5]
 list(filter(lambda x: x % 2 == 0, numbers))
 ```
 
+## Filter all number greater 
+```python
+l2 = [2,3,4,5,6,7,8]
+list(filter(lambda x: x > 4,l2))
+```
+
 ## Using Filters : Example1
 ```python
 seq = [2,3,4,5,6]
