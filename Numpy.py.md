@@ -60,3 +60,16 @@ narray = np.array(l1)
 narray[5:]
 array([ 6,  7,  8,  9, 10])
 ```
+
+## Copying the array
+
+
+## Searching index in the arrya
+```python
+np_2d = np.array([[2,3,4],[23,4,5],[2,3,5]])
+np_2d[0]
+[2,3,4]
+
+np_2d[0][1]
+3
+```
