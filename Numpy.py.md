@@ -34,6 +34,13 @@ array([[0.64762291, 0.56209399, 0.82639867, 0.38642705, 0.35253886],
        [0.46275963, 0.6657931 , 0.4770955 , 0.52623333, 0.40606067]])
 Note: Two square brakets indicate they are two dimentional
 ```
+## To get the dimesions of the array
+np_2d = np.array([[2,3,4],[23,4,5],[2,3,5]])
+np_2d.ndim
+1
+
+
+
 ## To provide a random integer
 ```python
 np.random.randint(1,100)
@@ -85,10 +92,17 @@ array([[3, 4],
 np_2d[:3,1:][0]
 ```
 
-## Adding Elements in numpy
+## Mathematics operations Elements in numpy
 ```python
 a1 = np.array([1,3,4])
 a2 = np.array([2,3,4])
 a1+a2
 array([3, 6, 8])
+
+a1-a2
+array([-1,  0,  0])
+
+a1*a2
+array([ 2,  9, 16])
+
 ```
