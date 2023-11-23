@@ -2,6 +2,11 @@
 
 # What is Numpy and advantages
 
+1. Less Meomory
+2. Fast
+3. convient 
+
+
 # To install numpy Module
 ```bash
 pip3 install numpy
@@ -80,4 +85,10 @@ array([[3, 4],
 np_2d[:3,1:][0]
 ```
 
-
+## Adding Elements in numpy
+```python
+a1 = np.array([1,3,4])
+a2 = np.array([2,3,4])
+a1+a2
+array([3, 6, 8])
+```
