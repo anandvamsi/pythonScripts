@@ -34,23 +34,45 @@ array([[0.64762291, 0.56209399, 0.82639867, 0.38642705, 0.35253886],
        [0.46275963, 0.6657931 , 0.4770955 , 0.52623333, 0.40606067]])
 Note: Two square brakets indicate they are two dimentional
 ```
+## Underst
+
+
+
 ## To get the dimesions of the array
+```python
 np_2d = np.array([[2,3,4],[23,4,5],[2,3,5]])
-np_2d.ndim
-1
 
+#Provides the dimention of the array
+np_2d.ndim 
+2
 
+#Size of the array
+np_2d.size
+9
+
+#Shape of the array
+(3, 3)
 
 ## To provide a random integer
 ```python
 np.random.randint(1,100)
 67
+```
 
 # provide 10 randome integer max limit is 100; not inclsive of 100
+```python
 np.random.randint(1,100,10)
 array([45, 92, 47, 61, 26, 97, 15, 51, 71, 46])
 ```
 
+# Provide 5 numbers between start limit to end limit
+
+```python
+np.linspace(1,5,10)
+array([1.        , 1.44444444, 1.88888889, 2.33333333, 2.77777778,
+       3.22222222, 3.66666667, 4.11111111, 4.55555556, 5.        ])
+​```
+ 
 ## Getting the maximum number from the array
 ```
 ranarray = np.random.randint(0,35,10)
