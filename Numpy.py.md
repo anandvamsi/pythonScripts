@@ -168,3 +168,28 @@ np.hstack((a,b))
 array([[0, 1, 2, 0, 1, 2],
        [3, 4, 5, 3, 4, 5],
        [6, 7, 8, 6, 7, 8]])
+```
+## Splitting the array in horizondal and vertical
+```python
+c= np.arange(30).reshape(2,15)
+result=np.hsplit(c,3)
+result[0]
+
+array([[ 0,  1,  2,  3,  4],
+       [15, 16, 17, 18, 19]])
+
+result[1]
+array([[ 5,  6,  7,  8,  9],
+       [20, 21, 22, 23, 24]])
+
+result[2]
+array([[10, 11, 12, 13, 14],
+       [25, 26, 27, 28, 29]])
+
+result = np.vsplit(c,2)
+result[0]
+array([[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14]])
+
+result[1]
+array([[15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]])
+```
