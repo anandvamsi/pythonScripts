@@ -115,7 +115,7 @@ np_2d = np.array([[2,3,4],[23,4,5],[2,3,5]])
 np_2d[0]
 [2,3,4]
 
-np_2d[0][1]
+np_2d[0][1] Means column0,row1
 3
 np_2d[:3,1:]
 array([[3, 4],
@@ -143,3 +143,28 @@ a1.dot(a2)
 27
 
 ```
+
+## Flatterin the array
+```python
+a2=np.random.rand(5,5)
+for x in a2.flat:
+    print(x)
+```
+
+## Rearranging the array vertical stacking and horizondal stacking 
+```python
+a=np.arange(9).reshape(3,3)
+b=np.arange(9).reshape(3,3)
+np.vstack((a,b))
+
+array([[0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8],
+       [0, 1, 2],
+       [3, 4, 5],
+       [6, 7, 8]])
+
+np.hstack((a,b))
+array([[0, 1, 2, 0, 1, 2],
+       [3, 4, 5, 3, 4, 5],
+       [6, 7, 8, 6, 7, 8]])
