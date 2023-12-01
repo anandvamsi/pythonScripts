@@ -42,8 +42,6 @@ a1.max()
 
 
 
-## Underst
-
 
 
 ## To get the dimesions of the array
@@ -85,7 +83,7 @@ array([1.        , 1.44444444, 1.88888889, 2.33333333, 2.77777778,
 ​```
  
 ## Getting the maximum number from the array
-```
+```python
 ranarray = np.random.randint(0,35,10)
 ranarray.max()
 ranarray.min()
