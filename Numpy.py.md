@@ -41,7 +41,8 @@ a1.max()
 ```
 
 
-
+## Create a indetiy matrix
+np.eye(3)
 
 
 ## To get the dimesions of the array
