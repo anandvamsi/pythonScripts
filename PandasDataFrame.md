@@ -8,6 +8,8 @@ In many cases, DataFrames are faster, easier to use, and more powerful than tabl
 they’re an integral part of the Python and NumPy ecosystems
 
 ```python
+import pandas as pd
+from numpy.random import randn
 df = pd.DataFrame(randn(5,4),['A','B','C','D','E'],['W','X','Y','Z'])
 df
 
