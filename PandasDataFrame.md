@@ -125,3 +125,67 @@ df.loc[['A','B'],['W','Y']]
 W	            Y
 A	0.302665	-1.706086
 B	-0.134841	0.166905
+```
+
+## Condition Operator
+```python
+df > 0
+	W	X	Y	Z
+A	True	False	True	True
+B	True	False	False	False
+C	True	True	True	False
+D	True	True	False	True
+E	True	False	False	True
+
+df[df > 0]
+		W	X	Y	Z
+A	0.185415	NaN	0.489342	0.431623
+B	0.918789	NaN	NaN	NaN
+C	1.189799	0.235070	1.049795	NaN
+D	0.394640	0.143831	NaN	0.875118
+E	0.705783	NaN	NaN	0.099050
+
+df['W']> 0
+A    True
+B    True
+C    True
+D    True
+E    True
+Name: W, dtype: bool
+
+df[df['W'] > 0]
+
+	W	X	Y	Z
+A	0.185415	-1.959586	0.489342	0.431623
+B	0.918789	-1.703497	-0.461836	-1.096932
+C	1.189799	0.235070	1.049795	-0.343215
+D	0.394640	0.143831	-0.449142	0.875118
+E	0.705783	-0.774156	-0.124828	0.099050
+
+result = df[df['W'] > 0]
+result['X'] ::- prints the X column
+A   -1.959586
+B   -1.703497
+C    0.235070
+D    0.143831
+E   -0.774156
+
+## Anther method
+df[df['W'] > 0]['X']
+A   -1.959586
+B   -1.703497
+C    0.235070
+D    0.143831
+E   -0.774156
+
+
+df[df['W'] > 0][['X','Y']]
+
+X	Y
+A	-1.959586	0.489342
+B	-1.703497	-0.461836
+C	0.235070	1.049795
+D	0.143831	-0.449142
+E	-0.774156	-0.124828
+
+```
