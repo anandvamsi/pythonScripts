@@ -57,7 +57,7 @@ E	-0.116773	1.901755
 ```python
 df['new'] = df['W'] + df ['Y']
 
-    W	        X	        Y	          Z	      new
+  	  W	        X	        Y	          Z	      new
 A	0.302665	1.693723	-1.706086	-1.159119	-1.403420
 B	-0.134841	0.390528	0.166905	0.184502	0.032064
 C	0.807706	0.072960	0.638787	0.329646	1.446493
@@ -78,7 +78,7 @@ E	-0.116773	1.901755	0.238127	1.996652	0.121354
 This will be a temperory delete
 df.drop('new',axis=1)
 
-W	X	Y	Z
+		W		X		Y	Z
 A	0.302665	1.693723	-1.706086	-1.159119
 B	-0.134841	0.390528	0.166905	0.184502
 C	0.807706	0.072960	0.638787	0.329646
@@ -88,7 +88,7 @@ E	-0.116773	1.901755	0.238127	1.996652
 ## To delete permently
 df.drop('new',axis=1,inplace=True)
 
-W	X	Y	Z
+		W		X		Y	Z
 A	0.302665	1.693723	-1.706086	-1.159119
 B	-0.134841	0.390528	0.166905	0.184502
 C	0.807706	0.072960	0.638787	0.329646
@@ -227,3 +227,41 @@ C	1.189799	0.235070	1.049795	-0.343215
 D	0.394640	0.143831	-0.449142	0.875118
 E	0.705783	-0.774156	-0.124828	0.099050
 ```
+
+## Missing Values
+```python
+d = {'A':[1,2,np.nan], 'B': [3,5,np.nan], 'c': [6,7,8]}
+df = pd.DataFrame(d)
+df
+	A	B	c
+0	1.0	3.0	6
+1	2.0	5.0	7
+2	NaN	NaN	8
+
+# will drop all the NA files
+df.dropna()
+	A	B	c
+0	1.0	3.0	6
+1	2.0	5.0	7
+
+
+# will all the row th having minimum 3 values
+df.dropna(thresh=3)
+	A	B	c
+0	1.0	3.0	6
+1	2.0	5.0	7
+
+# Fill the missing the values with  'test'
+df.fillna('test')
+
+A	B	c
+0	1.0	3.0	6
+1	2.0	5.0	7
+2	test	test	8
+
+# Filling the the average to the non values
+
+df['A'].fillna(value=df['A'].mean())
+0    1.0
+1    2.0
+2    1.5
