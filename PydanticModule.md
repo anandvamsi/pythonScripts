@@ -95,3 +95,8 @@ Pydantic Validation
       ↓
 Tool Execution
 ```
+
+## For MCP tools:
+- Let the LLM interpret human text.
+- Convert it to structured JSON.
+- Use Pydantic to validate the JSON before calling the tool.
